@@ -1,4 +1,4 @@
-#include "functions.h"
+/#include "functions.h"
 
 
 // =============================== INPUT HELPERS ============================
@@ -320,10 +320,9 @@ void readBirthday() {
   eeprom_read_block((void*)&birthDate, (void*)0, sizeof(birthDate));
 
   if (!validDate(birthDate)) {
-    //Initialize the birthday with the current date
-    birthDate.date = currentDate.date;
-    birthDate.month = currentDate.month;
-    birthDate.year = currentDate.year;
+    birthDate.date = 1;
+    birthDate.month = 1;
+    birthDate.year = 2020;
     eeprom_write_block((const void*)&birthDate, (void*)0, sizeof(birthDate));
     if (DEBUG) Serial.println("Init Birthday: ");
   } else {
