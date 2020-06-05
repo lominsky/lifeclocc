@@ -1,4 +1,4 @@
-/#include "functions.h"
+#include "functions.h"
 
 
 // =============================== INPUT HELPERS ============================
@@ -254,7 +254,7 @@ unsigned long getSecondsTillDeath() {
   tm2.Hour = tm2.Minute = tm2.Second = 0;
   time_t t1 = makeTime(tm);
   time_t t2 = makeTime(tm2);
-  if((int)t2 - (int)t1 < 1) return 0; //Sort of handle negative numbers
+//  if((int)t2 - (int)t1 < 1) return 0; //Sort of handle negative numbers
   return t2 - t1;
 }
 
