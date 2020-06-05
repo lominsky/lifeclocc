@@ -419,9 +419,11 @@ void stateClock() {
   }
 
   if (anyButtonRelease()) timeoutMills = 0; // Reset the timeout counter
-  if (timeoutMills > CLOCK_STATE_TIMEOUT) {
-    programSubState = 0;
-  }
+  //This makes the substate change back after five seconds.
+  //By commenting it out, you need to click to toggle between the substates (countdown, date, and time)
+//  if (timeoutMills > CLOCK_STATE_TIMEOUT) {
+//    programSubState = 0;
+//  }
 
   // Display Handers
   counter = getSecondsTillDeath();
